@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.dao.ContractDao">
+
+    <select id="getSimpleList" resultType="io.renren.entity.ContractEntity">
+        select id, stock_id, stock_code, exchange, price
+        from gp_contract
+        where 1=1
+        <if test="stockCode != null and stockCode.trim() != ''">
+            and stock_code like concat('%', #{stockCode}, '%')
+        </if>
+        <if test="exchange != null and exchange.trim() != ''">
+            and exchange = #{exchange}
+        </if>
+        order by id
+    </select>
+
+</mapper>
