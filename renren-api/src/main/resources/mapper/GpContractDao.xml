@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.dao.GpContractDao">
+
+    <select id="getList" resultType="io.renren.dto.GpContractListDTO">
+        SELECT id, contract_id AS contractId, symbol, exchange, market_price AS marketPrice
+        FROM gp_contract
+    </select>
+
+    <select id="getByContractId" resultType="io.renren.entity.GpContractEntity">
+        SELECT * FROM gp_contract WHERE contract_id = #{contractId}
+    </select>
+</mapper>
