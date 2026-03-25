@@ -10,6 +10,12 @@
 	<description>renren-api</description>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>io.renren</groupId>
 			<artifactId>renren-common</artifactId>
